@@ -47,8 +47,29 @@ function isSame(arr1, arr2) {
     return true;
 }
 
+function resultReport(marks){
+    if (!Array.isArray(marks)) {
+        return "Invalid";
+    }
+    let pass = 0;
+    let fail = 0;
+    let total = 0;
+    for (let m of marks){
+        total += m;
+        if (m >= 40){
+            pass++;
+        }
+        else {
+            fail++;
+        }
+    }
+    let avg = total / marks.length;
+    return { finalScore: avg, pass: pass, fail: fail };
+}
+
 
 console.log(totalFine("65")); 
 console.log(onlyCharacter(65));
 console.log(bestTeam({ name: "Germany", foul: 10, cardY: 1, cardR: 1 }, { name: "France", foul: 5, cardY: 2, cardR: 0 }));
 console.log(isSame([1, 2, 3], [1, 2, 3]));
+console.log(resultReport([45, 55, 35, 60, 70]));

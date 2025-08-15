@@ -6,4 +6,5 @@
 
 
 
-console.log(isSame({data: [2 , 5 , 6] } , [2 , 5 , 6]));
+
+console.log(resultReport([]));
